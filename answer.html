@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإجابة</title>
+</head>
+<body>
+
+    <h1>الإجابة:</h1>
+    <p id="answerText"></p>
+
+    <script>
+        // استخراج القيمة من الرابط وتحديد الإجابة بناءً عليها
+        var urlParams = new URLSearchParams(window.location.search);
+        var answer = urlParams.get('answer');
+
+        var answerText = "";
+        if (answer === "paris") {
+            answerText = "اهلا وسهلا معكم د علاء من هيئة البحث العلمي \n الليزر الطبي عبارة عن";
+        } else if (answer === "cairo") {
+            answerText = "عاصمة مصر هي القاهرة.";
+        } else if (answer === "jupiter") {
+            answerText = "أكبر كوكب في المجموعة الشمسية هو كوكب المشتري.";
+        } else {
+            answerText = "عذرًا، لا توجد إجابة لهذا السؤال.";
+        }
+
+        // عرض الإجابة في الصفحة
+        document.getElementById("answerText").innerText = answerText;
+    </script>
+
+</body>
+</html>

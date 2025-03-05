@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)file:///C:/Users/Wadah/Desktop/html2/h5.html -->
+<html lang="ar"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سؤال وجواب</title>
+</head>
+<body>
+
+    <h1>ادخل السؤال:</h1>
+    <input type="text" id="question" placeholder="اكتب سؤالك هنا">
+    <button onclick="openAnswer()">إظهار الجواب</button>
+
+    <script>
+        function openAnswer() {
+            var question = document.getElementById("question").value.toLowerCase();
+            var answerPage = "";
+
+            // التحقق من وجود أجزاء من السؤال
+            if (question.includes("الليزر الطبي")) {
+                answerPage = "answer.html?answer=paris";
+            } else if (question.includes("مصر")) {
+                answerPage = "answer.html?answer=cairo";
+            } else if (question.includes("أكبر كوكب")) {
+                answerPage = "answer.html?answer=jupiter";
+            } else {
+                alert("لا توجد إجابة لهذا السؤال.");
+                return;
+            }
+
+            // فتح صفحة جديدة تحتوي على الجواب
+            window.open(answerPage, "_blank");
+        }
+    </script>
+
+
+
+</body></html>
